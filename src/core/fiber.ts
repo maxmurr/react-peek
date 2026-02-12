@@ -108,15 +108,15 @@ export const getComponentInfo = (el: Element): ComponentInfo | null => {
   let target = ownerIsParent ? owner : composite;
   let usageSource: DebugSource | null = null;
 
+  const rgs = target.memoizedProps?.__rgs;
   if (
     !ownerIsParent &&
-    target.memoizedProps?.children != null &&
+    typeof rgs === "string" &&
     target._debugOwner &&
     COMPOSITE_TAGS.has(target._debugOwner.tag)
   ) {
-    const rgs = target.memoizedProps.__rgs;
     const parentSource = getComponentSource(target._debugOwner);
-    if (typeof rgs === "string" && parentSource) {
+    if (parentSource) {
       const sep = rgs.indexOf(":");
       const line = Number(rgs.substring(0, sep));
       const col = Number(rgs.substring(sep + 1));

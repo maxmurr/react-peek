@@ -13,6 +13,26 @@
       "types": "./dist/server.d.ts",
       "import": "./dist/server.mjs",
       "require": "./dist/server.cjs"
+    },
+    "./vite": {
+      "types": "./dist/vite.d.ts",
+      "import": "./dist/vite.mjs",
+      "require": "./dist/vite.cjs"
+    },
+    "./webpack": {
+      "types": "./dist/webpack.d.ts",
+      "import": "./dist/webpack.mjs",
+      "require": "./dist/webpack.cjs"
+    },
+    "./next": {
+      "types": "./dist/next.d.ts",
+      "import": "./dist/next.mjs",
+      "require": "./dist/next.cjs"
+    },
+    "./loader": {
+      "types": "./dist/loader.d.ts",
+      "import": "./dist/loader.mjs",
+      "require": "./dist/loader.cjs"
     }
   },
   "files": [
@@ -24,19 +44,30 @@
     "check-types": "tsc --noEmit"
   },
   "peerDependencies": {
-    "vite": ">=5.0.0"
+    "vite": ">=5.0.0",
+    "webpack": ">=5.0.0",
+    "next": ">=14.0.0"
   },
   "peerDependenciesMeta": {
     "vite": {
+      "optional": true
+    },
+    "webpack": {
+      "optional": true
+    },
+    "next": {
       "optional": true
     }
   },
   "dependencies": {
     "launch-editor": "^2.9.1",
-    "magic-string": "^0.30.17"
+    "magic-string": "^0.30.17",
+    "unplugin": "^3.0.0"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["esbuild"]
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

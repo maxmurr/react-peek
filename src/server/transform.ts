@@ -5,8 +5,8 @@ const PASCAL_CASE_RE = /^[A-Z][a-zA-Z0-9]*$/;
 
 const DECLARATION_PATTERNS = [
   /^(?:export\s+)?(?:const|let|var)\s+([A-Z][a-zA-Z0-9]*)\s*=/,
-  /^(?:export\s+)?function\s+([A-Z][a-zA-Z0-9]*)\s*\(/,
-  /^(?:export\s+)?class\s+([A-Z][a-zA-Z0-9]*)\s/,
+  /^(?:export\s+(?:default\s+)?)?function\s+([A-Z][a-zA-Z0-9]*)\s*\(/,
+  /^(?:export\s+(?:default\s+)?)?class\s+([A-Z][a-zA-Z0-9]*)\s/,
 ];
 
 interface ComponentDeclaration {

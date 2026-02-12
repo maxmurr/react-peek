@@ -6,7 +6,9 @@ export type { InspectorConfig, ComponentInfo, DebugSource } from "./types";
 let instance: Inspector | null = null;
 
 export const initInspector = (config?: InspectorConfig): void => {
-  if (instance) return;
+  if (instance) {
+    instance.stop();
+  }
   instance = new Inspector(config);
   instance.start();
 };
