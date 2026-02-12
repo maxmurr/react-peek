@@ -1,0 +1,23 @@
+{
+  "name": "react-peek-server",
+  "version": "0.1.0",
+  "description": "Companion CLI server for the React Peek Chrome extension",
+  "type": "module",
+  "bin": {
+    "react-peek-server": "./dist/bin.js"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch --onSuccess 'node dist/bin.js'"
+  },
+  "dependencies": {
+    "launch-editor": "^2.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.7.0"
+  },
+  "license": "MIT"
+}
