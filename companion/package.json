@@ -1,7 +1,7 @@
 {
   "name": "react-peek-server",
   "version": "0.1.0",
-  "description": "Companion CLI server for the React Peek Chrome extension",
+  "description": "Companion CLI server for the React Peek Chrome extension — opens source files in your editor",
   "type": "module",
   "bin": {
     "react-peek-server": "./dist/bin.js"
@@ -9,7 +9,24 @@
   "files": ["dist"],
   "scripts": {
     "build": "tsup",
-    "dev": "tsup --watch --onSuccess 'node dist/bin.js'"
+    "dev": "tsup --watch --onSuccess 'node dist/bin.js'",
+    "prepublishOnly": "tsup"
+  },
+  "keywords": [
+    "react",
+    "devtools",
+    "inspector",
+    "chrome-extension",
+    "open-in-editor"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxmurr/react-peek.git",
+    "directory": "companion"
+  },
+  "homepage": "https://github.com/maxmurr/react-peek#readme",
+  "engines": {
+    "node": ">=18"
   },
   "dependencies": {
     "launch-editor": "^2.9.1"
